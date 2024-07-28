@@ -1,0 +1,30 @@
+version: "3.4"
+
+services:
+  api-service:
+    image: api-service-netflix-clone:latest
+    command: sleep infinity
+    env_file:
+      - .env
+    depends_on:
+      - db
+    volumes:
+      - C:\Users\ADMIN\Desktop\Code-Project\Netflix-Clone:/app
+    networks:
+      - netflix-clone
+
+  db:
+    image: library/postgres:15-alpine
+    restart: unless-stopped
+    volumes:
+      - C:\Users\ADMIN\Desktop\Code-Project\database\netflix-clone:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+    networks:
+      - netflix-clone
+
+networks:
+  netflix-clone:
+    name: netflix-clone
+

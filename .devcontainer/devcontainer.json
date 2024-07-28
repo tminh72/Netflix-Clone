@@ -1,0 +1,22 @@
+{
+    "name": "Api Service",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "api-service",
+    "workspaceFolder": "/app",
+    "forwardPorts": [
+      8000
+    ],
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "Cameron.vscode-pytest",
+          "charliermarsh.ruff",
+          "editorconfig.editorconfig",
+          "ms-python.python",
+          "ms-python.vscode-pylance",
+          "streetsidesoftware.code-spell-checker"
+        ]
+      }
+    }
+  }
+  
